@@ -9,22 +9,21 @@ on:
 
 jobs:
    build:
-   runs-on: centos-latest
+     runs-on: centos-latest
    
-   steps:
+     steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.1.1
+        with:
+            node-version: '10.x'
 
-    - name: Setup Node.js environment
-    uses: actions/setup-node@v3.1.1
-    with:
-        node-version: '10.x'
-    
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Install dependencies
-    run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: hexo clean && hexo generate
-    run: hexo clean && hexo generate
+      - name: hexo clean && hexo generate
+        run: hexo clean && hexo generate
 
     
 
