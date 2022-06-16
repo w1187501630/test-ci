@@ -3,7 +3,7 @@ name: test-nc
 on:
   push:
     branches:
-      - main
+      - test
 
 
 jobs:
